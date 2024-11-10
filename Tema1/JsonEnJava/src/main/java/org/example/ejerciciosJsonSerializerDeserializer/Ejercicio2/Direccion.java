@@ -1,6 +1,8 @@
 package org.example.ejerciciosJsonSerializerDeserializer.Ejercicio2;
 
 import com.google.gson.*;
+import org.example.ejerciciosJsonSerializerDeserializer.Ejercicio1.Persona;
+//import org.example.ejerciciosJsonSerializerDeserializer.Ejercicio1.Persona;
 
 import java.lang.reflect.Type;
 
@@ -17,7 +19,7 @@ import java.lang.reflect.Type;
  * formato calle, ciudad.
  */
 
-public class Direccion implements JsonSerializer<Direccion>, JsonDeserializer<Direccion> {
+public class Direccion implements JsonSerializer<Direccion>, JsonDeserializer<Persona> {
     public String calle;
     public String ciudad;
     public Direccion direccion;
@@ -53,12 +55,28 @@ public class Direccion implements JsonSerializer<Direccion>, JsonDeserializer<Di
     }
 
     @Override
-    public Direccion deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
-        return null;
+    public String toString() {
+        return "Direccion{" +
+                "calle='" + calle + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", direccion=" + direccion +
+                '}';
+    }
+
+    @Override
+    public Persona deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+        JsonObject jsonObject = jsonElement.getAsJsonObject();
+        String nombre = jsonObject.get("name").getAsString();
+        Integer edad = jsonObject.get("age").getAsInt();
+        return new Persona(nombre, edad);
     }
 
     @Override
     public JsonElement serialize(Direccion direccion, Type type, JsonSerializationContext jsonSerializationContext) {
-        return null;
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("Calle", direccion.getCalle());
+        jsonObject.addProperty("Ciudad", direccion.getCiudad());
+        return jsonObject;
     }
 }
+

@@ -12,6 +12,7 @@ import java.lang.reflect.Type;
  * de modo que aparezcan como name y age en formato JSON.
  */
 
+
 public class Persona implements JsonSerializer<Persona>, JsonDeserializer <Persona>{
     public String nombre;
     public Integer edad;
@@ -52,6 +53,7 @@ public class Persona implements JsonSerializer<Persona>, JsonDeserializer <Perso
         jsonObject.addProperty("age", persona.getEdad());
         return jsonObject;
     }
+    /*
 
     public static void main(String[] args) {
         Gson gson = new GsonBuilder()
@@ -61,9 +63,9 @@ public class Persona implements JsonSerializer<Persona>, JsonDeserializer <Perso
         Persona persona = new Persona("Juan", 25);
         String json = gson.toJson(persona);
         System.out.println(json);
-        Persona persona2 = gson.fromJson(json, Persona.class);
-        System.out.println(persona2.getNombre());
-        System.out.println(persona2.getEdad());
     }
 
+
+     */
 }
+

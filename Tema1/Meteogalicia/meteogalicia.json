@@ -1,0 +1,104 @@
+{
+  "predConcello": {
+    "idConcello": 15078,
+    "listaPredDiaConcello": [
+      {
+        "ceo": {
+          "manha": 118,
+          "noite": 204,
+          "tarde": 108
+        },
+        "dataPredicion": "2024-11-08T00:00:00",
+        "nivelAviso": null,
+        "pchoiva": {
+          "manha": 55,
+          "noite": 25,
+          "tarde": 80
+        },
+        "tMax": 19,
+        "tMin": 12,
+        "tmaxFranxa": {
+          "manha": 18,
+          "noite": 15,
+          "tarde": 19
+        },
+        "tminFranxa": {
+          "manha": 14,
+          "noite": 10,
+          "tarde": 14
+        },
+        "uvMax": 2,
+        "vento": {
+          "manha": 300,
+          "noite": 299,
+          "tarde": 306
+        }
+      },
+      {
+        "ceo": {
+          "manha": 118,
+          "noite": 205,
+          "tarde": 104
+        },
+        "dataPredicion": "2024-11-09T00:00:00",
+        "nivelAviso": null,
+        "pchoiva": {
+          "manha": 55,
+          "noite": 25,
+          "tarde": 10
+        },
+        "tMax": 17,
+        "tMin": 10,
+        "tmaxFranxa": {
+          "manha": 16,
+          "noite": 12,
+          "tarde": 17
+        },
+        "tminFranxa": {
+          "manha": 10,
+          "noite": 11,
+          "tarde": 13
+        },
+        "uvMax": 2,
+        "vento": {
+          "manha": 299,
+          "noite": 299,
+          "tarde": 307
+        }
+      },
+      {
+        "ceo": {
+          "manha": 118,
+          "noite": 218,
+          "tarde": 118
+        },
+        "dataPredicion": "2024-11-10T00:00:00",
+        "nivelAviso": null,
+        "pchoiva": {
+          "manha": 55,
+          "noite": 55,
+          "tarde": 55
+        },
+        "tMax": 16,
+        "tMin": 11,
+        "tmaxFranxa": {
+          "manha": -9999,
+          "noite": -9999,
+          "tarde": -9999
+        },
+        "tminFranxa": {
+          "manha": -9999,
+          "noite": -9999,
+          "tarde": -9999
+        },
+        "uvMax": 2,
+        "vento": {
+          "manha": 299,
+          "noite": 299,
+          "tarde": 299
+        }
+      }
+    ],
+    "nome": "Santiago de Compostela"
+  }
+}

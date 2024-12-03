@@ -3,17 +3,14 @@ package com.example.uf1_proyecto.adaptador
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uf1_proyecto.R
+import com.example.uf1_proyecto.clases.Recordatorio
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-
-data class Recordatorio(
-    val descripcion: String,
-    val fechaHora: Long // Timestamp para almacenar fecha y hora
-)
 
 
 class CustomAdapter(private val recordatorios: MutableList<Recordatorio>) :
@@ -26,11 +23,27 @@ class CustomAdapter(private val recordatorios: MutableList<Recordatorio>) :
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val descripcion: TextView = view.findViewById(R.id.textDescripcion)
         val fechaHora: TextView = view.findViewById(R.id.textFechaHora)
+        val imageFecha: ImageView = view.findViewById(R.id.imageFecha)
 
         fun bind(recordatorio: Recordatorio) {
+            // Convertir el timestamp a fecha
+            val date = Date(recordatorio.fechaHora)
+            val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            val formattedDate = dateFormat.format(date)
+
+            // Establecer descripción y fecha
             descripcion.text = recordatorio.descripcion
             fechaHora.text = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
-                .format(Date(recordatorio.fechaHora))
+                .format(date)
+
+            // Extraer el día de la fecha
+            val dia = formattedDate.substring(0, 2) // Obtener los primeros 2 caracteres (día)
+
+            // Cargar la imagen del día
+            val context = itemView.context
+            val imageResource = context.resources.getIdentifier("calendario$dia", "drawable", context.packageName)
+            imageFecha.setImageResource(imageResource)  // Si la imagen existe, cargarla
+
         }
     }
 

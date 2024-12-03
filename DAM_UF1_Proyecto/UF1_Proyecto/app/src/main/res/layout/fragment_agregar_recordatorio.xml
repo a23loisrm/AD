@@ -17,7 +17,8 @@
                 android:id="@+id/calendarioRecordatorios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp"
+                />
 
 
             <TimePicker
@@ -42,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Guardar Recordatorio"
-                android:backgroundTint="@color/violeta"
+                android:backgroundTint="@color/azulClaro"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"/>
     </LinearLayout>

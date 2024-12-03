@@ -25,6 +25,8 @@
     <string name="txtAudiometriasMenu">Audiometrías</string>
     <string name="txtCitasMenu">Citas</string>
     <string name="txtRecordatorioMenu">Recordatorio</string>
+    <string name="descripcion">Descripción</string>
+    <string name="fechayhora">Fecha y hora</string>
 
 
 </resources>

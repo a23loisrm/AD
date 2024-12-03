@@ -6,20 +6,21 @@
         android:id="@+id/audiometrias"
         android:icon="@drawable/grafico"
         android:title="@string/txtAudiometriasMenu"
-        app:showAsAction="ifRoom"/>
+        android:enabled="true"
+        />
 
     <item
         android:id="@+id/citas"
         android:icon="@drawable/calendario"
         android:title="@string/txtCitasMenu"
-        app:showAsAction="always"/>
+        android:enabled="true" />
 
 
     <item
         android:id="@+id/recordatorios"
         android:icon="@drawable/recordatorio"
         android:title="@string/txtRecordatorioMenu"
-        app:showAsAction="always"/>
+        android:enabled="true" />
 
 
 </menu>

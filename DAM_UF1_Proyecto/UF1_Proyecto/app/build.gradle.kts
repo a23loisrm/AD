@@ -37,9 +37,9 @@ android {
 
 dependencies {
 
-    //Room
-    implementation ("androidx.room:room-ktx:2.4.0")
+
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.4") //Dependencia de navegación
+    implementation ("com.google.code.gson:gson:2.8.8") //Dependencia json
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

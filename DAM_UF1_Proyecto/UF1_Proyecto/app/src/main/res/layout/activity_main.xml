@@ -17,6 +17,7 @@
         android:layout_height="?attr/actionBarSize"
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
         android:gravity="center"
+        android:background="@color/azulOscuro"
         >
 
     </com.google.android.material.appbar.MaterialToolbar>
@@ -32,16 +33,14 @@
     </androidx.fragment.app.FragmentContainerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-
         android:id="@+id/botton_navigation"
-        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_bottom"
-        android:background="@color/black"
         app:itemTextColor="@color/white"
         app:itemIconTint="@color/white"
+        app:menu="@menu/menu_bottom"
+        app:itemBackground="@drawable/item_bottom_navigation"
         />
-
 
 </LinearLayout>
 

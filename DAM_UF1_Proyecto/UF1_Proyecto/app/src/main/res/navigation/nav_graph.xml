@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/audiometrias"
-        android:name="com.example.uf1_proyecto.Audiometrias"
+        android:name="com.example.uf1_proyecto.fragments.Audiometrias"
         android:label="Audiometrías" >
         <action
             android:id="@+id/action_audiometrias_to_audiometria"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/recordatorios"
-        android:name="com.example.uf1_proyecto.Recordatorios"
+        android:name="com.example.uf1_proyecto.fragments.Recordatorios"
         android:label="Recordatorios" >
         <action
             android:id="@+id/action_recordatorios_to_agregarRecordatorio"
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/citas"
-        android:name="com.example.uf1_proyecto.Citas"
+        android:name="com.example.uf1_proyecto.fragments.Citas"
         android:label="Citas" >
         <action
             android:id="@+id/action_citas_to_citaConExito"
@@ -41,16 +41,12 @@
     </fragment>
     <fragment
         android:id="@+id/audiometria"
-        android:name="com.example.uf1_proyecto.Audiometria"
+        android:name="com.example.uf1_proyecto.fragments.Audiometria"
         android:label="Audiometría"
-        tools:layout="@layout/fragment_audiometria" >
-        <action
-            android:id="@+id/action_audiometria_to_audiometrias"
-            app:destination="@id/audiometrias" />
-    </fragment>
+        tools:layout="@layout/fragment_audiometria" />
     <fragment
         android:id="@+id/agregarRecordatorio"
-        android:name="com.example.uf1_proyecto.AgregarRecordatorio"
+        android:name="com.example.uf1_proyecto.fragments.AgregarRecordatorio"
         android:label="Recordatorio Nuevo" >
         <action
             android:id="@+id/action_agregarRecordatorio_to_recordatorios"
@@ -60,7 +56,7 @@
     </fragment>
     <fragment
         android:id="@+id/citaConExito"
-        android:name="com.example.uf1_proyecto.CitaConExito"
+        android:name="com.example.uf1_proyecto.fragments.CitaConExito"
         android:label="Éxito" >
         <action
             android:id="@+id/action_citaConExito_to_recordatorios"

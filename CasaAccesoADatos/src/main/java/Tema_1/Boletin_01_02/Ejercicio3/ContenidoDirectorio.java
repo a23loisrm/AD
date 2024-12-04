@@ -1,5 +1,6 @@
 package Tema_1.Boletin_01_02.Ejercicio3;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,12 +27,32 @@ public class ContenidoDirectorio {
         }
     }
 
+    public static void listarContenidoList(File directorio) throws IOException {
+        File[] archivos = directorio.listFiles(file -> file.isFile() && file.getName().endsWith(".java"));
+        if (archivos != null) {
+            for (File archivo : archivos) {
+                System.out.println(archivo.getAbsolutePath());
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
-        Path diretorio = Paths.get("/media/a23loisrm/a23loisrm_documentos/AccesoADatos/AD/CasaAccesoADatos/src/main/java/Tema_1/Boletin_01_02/Ejercicio3");
+        Path diretorio = Paths.get("C:\\Users\\loisr\\Documents\\AD\\CasaAccesoADatos\\src\\main\\java\\Tema_1\\Boletin_01_02\\Ejercicio3");
+        File fileDirectorio = diretorio.toFile();
 
         try {
+            long inicioPath = System.nanoTime();
             listarContenido(diretorio);
+            long finPath = System.nanoTime();
+            System.out.println("Tiempo con Path: " + (finPath - inicioPath) + " nanosegundos");
+
+
+            long inicioFile = System.nanoTime();
+            listarContenidoList(fileDirectorio);
+            long finFile = System.nanoTime();
+            System.out.println("Tiempo con File: " + (finFile - inicioFile) + " nanosegundos");
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

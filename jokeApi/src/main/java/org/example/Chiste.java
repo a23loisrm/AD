@@ -20,7 +20,6 @@ public class Chiste {
     private final List<Flag> banderas;
     private String chiste;
     private String respuesta;
-
     private Lenguaje lenguaje;
 
     /**

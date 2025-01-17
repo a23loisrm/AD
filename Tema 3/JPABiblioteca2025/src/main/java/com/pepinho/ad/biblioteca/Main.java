@@ -14,6 +14,9 @@ public class Main {
         EntityManager em = emf.createEntityManager();
 
         var lista = em.createQuery("Select b from Book b").getResultList();
+        for (var libro: lista){
+            System.out.println(libro);
+        }
 
         var libro = em.find(Book.class, 1L);
 

@@ -5,10 +5,7 @@
  */
 package com.pepinho.ad.biblioteca.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -16,6 +13,9 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -28,14 +28,20 @@ public class Book implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBook;
+    @Column(length = 13, nullable = false, unique = true)
     private String isbn;
+    @Column(name = "titulo", nullable = false)
     private String title;
+    @Column(name = "autor")
     private String author;
+    @Column(name = "anho")
     private Short ano;
+    @Column(name = "disponible")
     private Boolean available;
     private byte[] portada;
+    private LocalDate dataPublicacion;
 
-    private String[] contido;
+    transient private List<Contido> contido = new ArrayList<>();
 
     private static final long serialVersionUID = 1L;
 
@@ -77,6 +83,18 @@ public class Book implements Serializable {
         this.ano = year;
         this.available = available;
         this.portada = portada;
+    }
+
+    public Book(Long idBook, String isbn, String title, String author,
+                Short year, Boolean available, byte[] portada, LocalDate dataPublicacion) {
+        this.idBook = idBook;
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.ano = year;
+        this.available = available;
+        this.portada = portada;
+        this.dataPublicacion  =dataPublicacion;
     }
 
     public Long getIdBook() {
@@ -141,6 +159,12 @@ public class Book implements Serializable {
         this.portada = portada;
         return this;
     }
+
+    public LocalDate getDataPublicacion() {
+        return dataPublicacion;
+    }
+
+
 
     /**
      * Asigna la portada con flujos, leyendo los bytes.
@@ -223,5 +247,6 @@ public class Book implements Serializable {
         return idBook + "] [isbn: " + isbn + "] " + title + ". "
                 + author + " (" + ano + ") [" + ((available) ? '*' : ' ') + ']';
     }
+
 
 }

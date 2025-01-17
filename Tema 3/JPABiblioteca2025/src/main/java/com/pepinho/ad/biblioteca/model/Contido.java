@@ -1,5 +1,11 @@
 package com.pepinho.ad.biblioteca.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -13,28 +19,29 @@ import java.util.Objects;
  * );
  * CREATE UNIQUE INDEX PRIMARY_KEY_9 ON PUBLIC.Contido (idContido);
  */
-public class Contido {
 
+@Entity
+public class Contido implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idContido;
-    private Long idBook;
     private String contido;
+    private Book book;
 
     public Contido() {
     }
 
     public Contido(Long idBook, String contido) {
-        this.idBook = idBook;
         this.contido = contido;
     }
 
     public Contido(Long idContido, Long idBook) {
         this.idContido = idContido;
-        this.idBook = idBook;
     }
 
     public Contido(Long idContido, Long idBook, String contido) {
         this.idContido = idContido;
-        this.idBook = idBook;
         this.contido = contido;
     }
 
@@ -46,13 +53,12 @@ public class Contido {
         this.idContido = idContido;
     }
 
-
     public Long getIdBook() {
-        return idBook;
+        return book.getIdBook();
     }
 
     public void setIdBook(Long idBook) {
-        this.idBook = idBook;
+        this.book.setIdBook(idBook);
     }
 
     public String getContido() {
@@ -76,6 +82,9 @@ public class Contido {
 
     @Override
     public String toString() {
-        return idContido + " (" + idBook + "): " + contido;
+        return "Contido{" +
+                "idContido=" + idContido +
+                ", contido='" + contido + '\'' +
+                '}';
     }
 }

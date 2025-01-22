@@ -99,3 +99,7 @@ public class EntityManagerUtil {
 
 ### Consultas estáticas
 
+
+## Objetos Grander (LOBs)
+
+

@@ -74,7 +74,7 @@
             <!--      <property name="jakarta.persistence.jdbc.driver" value="net.ucanaccess.jdbc.UcanaccessDriver"/>-->
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
             <!-- Automáticamente, genera el esquema de la base de datos -->
-            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create "/>
 
             <!-- Muestra por pantalla las sentencias SQL -->
             <property name="hibernate.show_sql" value="true"/>

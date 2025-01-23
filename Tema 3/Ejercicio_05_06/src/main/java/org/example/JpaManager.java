@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class JpaManager {
 
-    public static final String EJERCICIO = "jpa-hibernate-h2";
+    public static final String BIBLIOTECA = "ejercicio_05_06";
 
     private static Map<String, EntityManagerFactory> instances = new HashMap<>();
 
@@ -18,12 +18,11 @@ public class JpaManager {
     }
 
     private static boolean isEntityManagerFactoryClosed(String unidadPersistencia){
-        return !instances.containsKey(unidadPersistencia) || instances.get(unidadPersistencia) == null ||
+        return !instances.containsKey(unidadPersistencia) ||instances.get(unidadPersistencia) == null ||
                 !instances.get(unidadPersistencia).isOpen();
     }
 
-
-    public static EntityManagerFactory getEntityManagerFactory(String unidadPersistencia){
+    private static EntityManagerFactory getEntityManagerFactory(String unidadPersistencia){
         if (isEntityManagerFactoryClosed(unidadPersistencia)){
             synchronized (JpaManager.class){
                 if (isEntityManagerFactoryClosed(unidadPersistencia)){
@@ -38,14 +37,15 @@ public class JpaManager {
         return instances.get(unidadPersistencia);
     }
 
-    public static EntityManager getEntityManager(String persistenceUnitName){
-        return getEntityManagerFactory(persistenceUnitName).createEntityManager();
+    public static EntityManager getEntityManager(String unidadPersistencia){
+        return getEntityManagerFactory(unidadPersistencia).createEntityManager();
     }
 
-    public static void close(String persistenceUnitName){
-        if (instances.containsKey(persistenceUnitName)){
-            instances.get(persistenceUnitName).close();
-            instances.remove(persistenceUnitName);
+    public void close(String unidadPersistencia){
+        if (instances.containsKey(unidadPersistencia)){
+            instances.get(unidadPersistencia);
+            instances.remove(unidadPersistencia);
         }
     }
+
 }

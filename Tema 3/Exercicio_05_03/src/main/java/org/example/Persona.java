@@ -8,8 +8,17 @@ import java.time.Period;
 @Entity
 public class Persona {
 
+    @TableGenerator(
+
+            name = "generadorIdDireccion",
+            table = "generadorId",
+            pkColumnName = "LONG_ID_GEN",
+            valueColumnName = "PERSONA_ID",
+            initialValue = 1000,
+            allocationSize = 100
+    )
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "generadorIdDireccion")
     private long idPersona;
     private String nombre;
     private String apellidos;

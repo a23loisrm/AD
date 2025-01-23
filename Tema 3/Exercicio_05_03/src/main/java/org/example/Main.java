@@ -11,16 +11,13 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-hibernate-h2");
+        EntityManagerFactory emf = JpaManager.getEntityManagerFactory(JpaManager.EJERCICIO);
         EntityManager em = emf.createEntityManager();
 
         em.getTransaction().begin();
 
-        Persona persona1 = new Persona(1, "Juan", "Perez Garcia", LocalDate.of(1990, 1, 15), Sexo.HOMBRE, EstadoCivil.SOLTERO, new byte[]{1, 2, 3});
-        em.persist(persona1);
-
-        Persona persona2 = new Persona(2, "Maria", "Lopez Fernandez", LocalDate.of(1985, 5, 30), Sexo.MUJER, EstadoCivil.CASADO, new byte[]{4, 5, 6});
-        em.persist(persona2);
+        Persona persona = new Persona(0, "Juan", "Perez", LocalDate.of(1990, 1, 1), Sexo.HOMBRE, EstadoCivil.SOLTERO, null);
+        em.persist(persona);
 
         em.getTransaction().commit();
 

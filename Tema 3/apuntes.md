@@ -68,7 +68,7 @@ public class Main {
 ```
 
 
-## Creaciom de EmtityManagerUtil
+## Creación de EmtityManagerUtil
 
 Creamos una clase EntityManagerUtil que nos permitirá crear un EntityManagerFactory y un EntityManager.
 Esto es un **Singleton**, por lo que solo se creará una vez.
@@ -325,3 +325,170 @@ sí se pueda almacenar en la base de datos y viceversa.
 
 
 ## Objetos Grander (LOBs)
+
+
+## Relaciones
+
+Las realiaciones entre entidades se pueden clasificar en:
+
+- **ManyToOne(Muchos a uno)**
+- **OneToMany(Uno a muchos)**
+- **OneToOne(Uno a uno)**
+- **ManyToMany(Muchos a muchos)**
+
+### Relaciones mono-valuadas: @OneToOne y @ManyToOne
+
+#### @OneToOne unidireccionales
+
+```java
+@Entity
+public class Empleado {
+    @Id
+    private int idEmpleado;
+    private String nombre;
+    private long salario;
+    @OneToOne
+    private Aparcamiento aparcamiento;
+    // ...
+}
+```
+```java
+@Entity
+public class Aparcamiento {
+    @Id
+    private int idAparcamiento;
+    private int numero;
+    private String direccion;
+    // ...
+}
+```
+##### ¿Qué significa esto?
+
+- **Unidireccional:** Aquí solo **Empleado** tiene conocimiento de su relación con **Aparcamiento**. Desde la entidad `Empleado` puedes acceder al aparcamiento asignado
+a ese empleado, pero desde la entidad `Aparcamiento` no hay ninguna referencia al empleado.
+
+
+- **Uso:** Se usa cuando solo necesitas consultar una relación en una dirección, en este caso, "¿Qué aparcamiento tiene un empleado?".
+
+
+- **`@OneToOne`:** Indica que existe una relación uno a uno entre `Empleado` y `Aparcamiento`. Esto significa que cada empleado tiene 
+exactamente un aparcamiento, y cada aparcamiento está asignado a un solo empleado.
+
+
+- **Propietario de la relación:** En este caso, la entidad `Empleado` es la propietaria de la relación, ya que tiene la 
+referencia directa a `Aparcamiento`. Esto también significa que la clave foránea (`aparcamiento_id`) estará en la tabla de `Empleado` en la base de datos.
+
+
+#### @OneToOne bidireccionales
+
+```java
+@Entity
+public class Aparcamiento {
+    @Id
+    private int idAparcamiento;
+    private int numero;
+    private String direccion;
+    
+    @OneToOne(mappedBy="aparcamiento")
+    private Empleado empleado;
+    // ...
+}
+```
+```java
+@Entity
+public class Aparcamiento {
+    @Id
+    private int idAparcamiento;
+    private int numero;
+    private String direccion;
+    // ...
+}
+```
+##### ¿Qué significa esto?
+
+- **Bidireccional:** Ahora ambas entidades tienen conocimiento una de la otra.
+Desde Empleado puedes acceder a su Aparcamiento, y desde Aparcamiento puedes
+acceder al Empleado que lo tiene asignado.
+
+
+- **`mappedBy`**: En Aparcamiento, la anotación `@OneToOne(mappedBy = "aparcamiento")` indica
+que Empleado es el propietario de la relación. Esto significa que la clave 
+foránea sigue estando en la tabla Empleado. La relación en Aparcamiento solo
+existe como una referencia lógica, pero no gestiona la base de datos.
+
+
+- **Uso**: Se usa cuando necesitas navegar la relación en ambas direcciones,
+por ejemplo, responder preguntas como:
+  - ¿Qué aparcamiento tiene asignado un empleado?
+  - ¿A qué empleado está asignado un aparcamiento?
+
+
+#### @ManyToOne unidireccional
+
+```java
+@Entity
+public class Empleado {
+    @Id
+    private int idEmpleado;
+    private String nombre;
+    private long salario;
+    @ManyToOne
+    private Departamento departamento;
+    // ...
+}
+```
+```java
+@Entity
+public class Departamento {
+    @Id
+    private int idDepartamento;
+    private String nombre;
+    // ...
+}
+```
+1. La relación entre `Empleado` y `Departamento` es de muchos a uno, es decir:
+
+- Varios empleados pueden pertenecer a un solo departamento.
+
+- Un departamento puede tener varios empleados asignados, pero en este modelo
+unidireccional, el departamento no sabe cuántos ni cuáles empleados tiene.
+
+2. Unidireccional:
+
+- Solo la clase `Empleado` tiene conocimiento de esta relación a través de 
+su atributo `departamento`.
+
+- Desde `Departamento`, no es posible navegar hacia los empleados.
+
+### Relaciones mmulti-valuadas: @OneToMany y @ManyToMany
+
+#### @OneToMany bidireccional
+
+```java
+@Entity
+public class Departamento {
+    @Id
+    private int idDepartamento;
+    private String nombre;
+    @OneToMany(mappedBy="departamento") // Empleado debe tener un atributo "departamento"
+    private Collection<Empleado> empleados;
+    // ...
+}
+```
+### <mark>Importante!!</mark>
+**Cuando sea `@OneToMany` se debe usar `Collection` o `List`.**
+
+```java
+@Entity
+public class Empleado {
+    @Id
+    private int idEmpleado;
+    private String nombre;
+    private long salario;
+    @ManyToOne
+    @JoinColumn(name="idDepartamento") // Nombre de la columna de clave foránea
+    private Departamento departamento;
+    // ...
+}
+```
+

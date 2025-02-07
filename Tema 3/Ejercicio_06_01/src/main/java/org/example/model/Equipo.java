@@ -1,7 +1,15 @@
-package org.example;
+package org.example.model;
 
-public class Equipo {
 
+import jakarta.persistence.*;
+
+import java.io.Serializable;
+
+@Entity
+public class Equipo implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idEquipo;
     private String nombre;
     private String ciudad;
@@ -9,6 +17,9 @@ public class Equipo {
     private Division division;
     private String nombreCompleto;
     private String abreviatura;
+
+    @OneToOne
+    private Entrenador entrenador;
 
     public Equipo() {
     }

@@ -5,6 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4e0201-97b6-4919-93bf-44974fc6ee48" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Ejercicio_06_01/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ejercicio_06_01/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio_06_01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ejercicio_06_01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio_06_01/src/main/java/org/example/Conferencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio_06_01/src/main/java/org/example/DAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio_06_01/src/main/java/org/example/Division.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio_06_01/src/main/java/org/example/Equipo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio_06_01/src/main/java/org/example/EquipoDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio_06_01/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio_05_03/src/main/resources/persona.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../Exercicio_05_03/src/main/resources/persona.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio_05_03/src/main/resources/persona.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/../Exercicio_05_03/src/main/resources/persona.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JPADependencia/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JPADependencia/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../apuntes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../apuntes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +49,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "L:/AccesoADatos/AD/Tema 3/Exercicio_05_03",
+    "last_opened_file_path": "L:/AccesoADatos/AD/Tema 3/Ejercicio_05_06",
     "onboarding.tips.debug.path": "L:/AccesoADatos/AD/Tema 3/Ejercicio_05_06/src/main/java/org/example/Main.java"
   }
 }]]></component>

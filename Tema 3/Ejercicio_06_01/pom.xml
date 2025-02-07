@@ -17,9 +17,19 @@
 
     <dependencies>
 
+
+
+
+
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 
         <!--Dependecia gson-->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -27,6 +37,7 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+
         <!--Dependecia h2-->
         <dependency>
             <groupId>com.h2database</groupId>

@@ -14,19 +14,27 @@ Creamos la carpeta META-INF en src/main/resources y dentro de ella el archivo pe
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
-    <persistence-unit name="jpa-hibernate-mysql">
-        <properties>
-            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
-            <property name="jakarta.persistence.jdbc.url"    value="jdbc:h2:    " />
-            <property name="jakarta.persistence.jdbc.user"   value="" />
-            <property name="jakarta.persistence.jdbc.password" value="" />
-            <property name="jakarta.persistence.schema-generation.database.action" value="create" />
+  <persistence-unit name="ejercicio_06_01" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="jakarta.persistence.jdbc.url"
+                value="jdbc:h2:.\src\main\resources\ejercicio_05_06;DB_CLOSE_ON_EXIT=TRUE;DATABASE_TO_UPPER=FALSE"/>
+      <property name="jakarta.persistence.jdbc.user" value=""/>
+      <property name="jakarta.persistence.jdbc.password" value=""/>
+      <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
 
-            <property name="hibernate.dialect"    value="org.hibernate.dialect.H2Dialect" />
-            <property name="hibernate.show_sql"   value="true" />
-            <property name="hibernate.format_sql" value="true" />
-        </properties>
-    </persistence-unit>
+      <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+
+
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.highlight_sql" value="true"/>
+
+      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+    </properties>
+
+  </persistence-unit>
 </persistence>
 ```
 ## Entidades
@@ -336,9 +344,9 @@ Las realiaciones entre entidades se pueden clasificar en:
 - **OneToOne(Uno a uno)**
 - **ManyToMany(Muchos a muchos)**
 
-### Relaciones mono-valuadas: @OneToOne y @ManyToOne
+## Relaciones mono-valuadas: @OneToOne y @ManyToOne
 
-#### @OneToOne unidireccionales
+### @OneToOne unidireccionales
 
 ```java
 @Entity
@@ -362,7 +370,7 @@ public class Aparcamiento {
     // ...
 }
 ```
-##### ¿Qué significa esto?
+#### ¿Qué significa esto?
 
 - **Unidireccional:** Aquí solo **Empleado** tiene conocimiento de su relación con **Aparcamiento**. Desde la entidad `Empleado` puedes acceder al aparcamiento asignado
 a ese empleado, pero desde la entidad `Aparcamiento` no hay ninguna referencia al empleado.
@@ -379,7 +387,7 @@ exactamente un aparcamiento, y cada aparcamiento está asignado a un solo emplea
 referencia directa a `Aparcamiento`. Esto también significa que la clave foránea (`aparcamiento_id`) estará en la tabla de `Empleado` en la base de datos.
 
 
-#### @OneToOne bidireccionales
+### @OneToOne bidireccionales
 
 ```java
 @Entity
@@ -396,15 +404,17 @@ public class Aparcamiento {
 ```
 ```java
 @Entity
-public class Aparcamiento {
+public class Empleado {
     @Id
-    private int idAparcamiento;
-    private int numero;
-    private String direccion;
+    private int idEmpleado;
+    private String nombre;
+    private long salario;
+    @OneToOne
+    private Aparcamiento aparcamiento;
     // ...
 }
 ```
-##### ¿Qué significa esto?
+#### ¿Qué significa esto?
 
 - **Bidireccional:** Ahora ambas entidades tienen conocimiento una de la otra.
 Desde Empleado puedes acceder a su Aparcamiento, y desde Aparcamiento puedes
@@ -423,7 +433,7 @@ por ejemplo, responder preguntas como:
   - ¿A qué empleado está asignado un aparcamiento?
 
 
-#### @ManyToOne unidireccional
+### @ManyToOne unidireccional
 
 ```java
 @Entity
@@ -460,9 +470,9 @@ su atributo `departamento`.
 
 - Desde `Departamento`, no es posible navegar hacia los empleados.
 
-### Relaciones mmulti-valuadas: @OneToMany y @ManyToMany
+## Relaciones mmulti-valuadas: @OneToMany y @ManyToMany
 
-#### @OneToMany bidireccional
+### @OneToMany bidireccional
 
 ```java
 @Entity
@@ -491,4 +501,96 @@ public class Empleado {
     // ...
 }
 ```
+### @OneToMany unidireccional
+
+Cubrir esto
+
+### @ManyToMany
+
+Cubrir esto
+
+### Nombre de la columna de clave foránea
+
+Si quieres cambiar el nombre de la columna de clave foránea, puedes usar la anotación
+`@JoinColumn` en la propiedad de la relación.
+
+```java
+@Entity
+public class Empleado {
+
+    @Id private int idEmpleado;
+    private String nombre;
+    private long salario;
+
+    @ManyToOne
+    @JoinColumn(name = "idDepartamento")
+    private Departamento departamento;
+    // ...
+}
+```
+
+
+## Claves compartidas en relaciones uno a uno
+
+### `@MapsId`
+
+Se usa cuando **quieres compartir la clave primaria** de una entidad con una clave foránea de otra entidad.
+Esto es común en relaciones **uno a uno** donde la entidad dependiente (por ejemplo, `HistorialEmpleado`) usa la clave primaria de la entidad principal (por ejemplo, `Empleado`).
+
+
+**¿Como funciona?**
+1. Definimos un atributo de clave primaria en la entidad dependiente (idEmpleado).
+
+
+2. También definimos una relación con la entidad principal (Empleado empleado).
+
+
+3. Ambos atributos apuntan a la misma columna en la base de datos, pero solo el atributo de relación se usa para persistir datos.
+
+
+```java
+
+@Entity
+public class HistorialEmpleado {
+@Id
+int idEmpleado; // Clave primaria
+
+    @MapsId // Mapea la relación a la misma columna que idEmpleado
+    @OneToOne
+    @JoinColumn(name="idEmpleado")
+    private Empleado empleado; // Relación con Empleado
+}
+```
+
+### PrimaryKeyJoinColumn y PrimaryKeyJoinColumns
+
+
+La anotación `@PrimaryKeyJoinColumn` **se utiliza para especificar una columna de clave primaria de una tabla de unión.**
+
+`@PrimaryKeyJoinColumns` se utiliza para **especificar varias columnas de clave primaria de una tabla de unión.**
+
+Se usa en relaciones **uno a uno** cuando **la clave primaria de una entidad es también una clave foránea** que apunta a otra entidad.
+La diferencia clave con `@MapsId` es que aquí **la entidad propietaria de la relación** define cómo se enlazan las claves.
+
+
+**¿Como funciona?**
+1. La entidad principal (por ejemplo, `Empleado`) tiene un campo que apunta a la entidad secundaria (`HistorialEmpleado`).
+
+
+2. Se indica que la clave primaria de la entidad principal también funciona como clave foránea para la entidad secundaria.
+
+
+```java
+@Entity
+public class Empleado {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idEmpleado;
+
+    @OneToOne
+    @PrimaryKeyJoinColumn // La clave primaria también es la clave foránea hacia HistorialEmpleado
+    private HistorialEmpleado historial;
+}
+```
+
 

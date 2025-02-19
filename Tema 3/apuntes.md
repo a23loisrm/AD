@@ -593,4 +593,69 @@ public class Empleado {
 }
 ```
 
+## Consultas
+
+JPA proporciona varias formas de realizar consultas a la base de datos, permitiendo acceder y manipular datos de manera eficiente. Existen dos tipos principales de consultas en JPA:
+
+- **Consultas Estáticas** (Definidas en la entidad con `@NamedQuery` o `@NamedNativeQuery`).
+- **Consultas Dinámicas** (Utilizando `EntityManager.createQuery` o `createNativeQuery` en tiempo de ejecución).
+
+### 1. Consultas JPQL (Java Persistence Query Language)
+JPQL es el lenguaje de consultas orientado a objetos de JPA, similar a SQL pero operando sobre entidades en lugar de tablas.
+
+#### a) Consulta Básica
+```java
+Query query = em.createQuery("SELECT p FROM Pelicula p WHERE p.titulo = :titulo");
+query.setParameter("titulo", "Titanic");
+List<Pelicula> peliculas = query.getResultList();
+```
+
+#### b) Consulta con Selección Parcial (Devuelve Objetos Específicos)
+```java
+Query query = em.createQuery("SELECT p.titulo, p.ano FROM Pelicula p");
+List<Object[]> resultados = query.getResultList();
+for (Object[] fila : resultados) {
+    System.out.println("Título: " + fila[0] + ", Año: " + fila[1]);
+}
+```
+
+#### c) Consulta con Funciones de Agregación
+```java
+Query query = em.createQuery("SELECT COUNT(p) FROM Pelicula p WHERE p.ano > 2000");
+Long cantidad = (Long) query.getSingleResult();
+System.out.println("Cantidad de películas después del 2000: " + cantidad);
+```
+
+### 2. Named Queries (Consultas Estáticas)
+
+#### a) Uso de `@NamedQuery`
+```java
+@Entity
+@NamedQuery(name = "Pelicula.findByTitulo", query = "SELECT p FROM Pelicula p WHERE p.titulo = :titulo")
+public class Pelicula {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String titulo;
+}
+```
+
+#### b) Ejecución de una `@NamedQuery`
+```java
+TypedQuery<Pelicula> query = em.createNamedQuery("Pelicula.findByTitulo", Pelicula.class);
+query.setParameter("titulo", "Titanic");
+List<Pelicula> peliculas = query.getResultList();
+```
+
+---
+
+### 3. Consultas Nativas (SQL Directo)
+
+#### a) Consulta Nativa con `createNativeQuery`
+```java
+Query query = em.createNativeQuery("SELECT * FROM pelicula WHERE titulo = ?", Pelicula.class);
+query.setParameter(1, "Titanic");
+List<Pelicula> peliculas = query.getResultList();
+```
+
 

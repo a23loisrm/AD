@@ -1,0 +1,33 @@
+{
+  "id": 353,
+  "title": "Stein.world",
+  "thumbnail": "https:\/\/www.freetogame.com\/g\/353\/thumbnail.jpg",
+  "status": "Live",
+  "short_description": "A free-to-play, browser-based online fantasy role \r\nplaying game done in an old-school \r\n16-bit style.",
+  "description": "Stein.world is a free-to-play, browser-based online fantasy role playing game done in an old-school 16-bit style. Built as a persistent world, Stein features hundreds of quests and a vast array of items to collect \u2014 including millions of equipment variations as well as mounts and pets.\r\n\r\nThe game offers plenty of social features, such as group functions, a guild system, a friend\u2019s list. There\u2019s even a housing and farming system. For those really looking for adventure there are dungeons to participate in and a PvP system made up of battlegrounds and open world combat.",
+  "game_url": "https:\/\/www.freetogame.com\/open\/steinworld",
+  "genre": "MMORPG",
+  "platform": "Web Browser",
+  "publisher": "PG5-Studio UG",
+  "developer": "PG5-Studio UG",
+  "release_date": "2019-04-24",
+  "freetogame_profile_url": "https:\/\/www.freetogame.com\/steinworld",
+  "screenshots": [
+    {
+      "id": 931,
+      "image": "https:\/\/www.freetogame.com\/g\/353\/Stein-1.jpg"
+    },
+    {
+      "id": 932,
+      "image": "https:\/\/www.freetogame.com\/g\/353\/Stein-2.jpg"
+    },
+    {
+      "id": 933,
+      "image": "https:\/\/www.freetogame.com\/g\/353\/Stein-3.jpg"
+    },
+    {
+      "id": 934,
+      "image": "https:\/\/www.freetogame.com\/g\/353\/Stein-4.jpg"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-870.5518635870353" y="928.135276883241">model.local.sanclemente.ad.exame.RequisitosSistema</node>
+    <node x="-496.4768409165738" y="725.0417836106683">model.local.sanclemente.ad.exame.Plataforma</node>
+    <node x="-240.99782529453256" y="904.5109588340574">model.local.sanclemente.ad.exame.Imagen</node>
+    <node x="-244.90659662725204" y="741.573532831209">model.local.sanclemente.ad.exame.Genero</node>
+    <node x="-542.3608145564956" y="894.0529393583525">model.local.sanclemente.ad.exame.Juego</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="model.local.sanclemente.ad.exame.Juego" target="model.local.sanclemente.ad.exame.Genero" relationship="TO_ONE">
+      <point x="100.8839736399218" y="-170.0" />
+      <point x="-320.9768409165738" y="779.573532831209" />
+      <point x="-69.0" y="0.0" />
+    </edge>
+    <edge source="model.local.sanclemente.ad.exame.Imagen" target="model.local.sanclemente.ad.exame.Juego" relationship="TO_ONE">
+      <point x="-64.50017470546743" y="4.1165942548104795E-5" />
+      <point x="-263.66666666666663" y="964.511" />
+      <point x="-263.66666666666663" y="1064.0529999999999" />
+      <point x="120.49981455649561" y="6.064164745112066E-5" />
+    </edge>
+    <edge source="model.local.sanclemente.ad.exame.Juego" target="model.local.sanclemente.ad.exame.RequisitosSistema" relationship="TO_ONE">
+      <point x="-120.47251877683755" y="-69.05293935835243" />
+      <point x="-572.6230057384322" y="995.0" />
+      <point x="-572.6230057384322" y="995.0" />
+      <point x="94.3851969203688" y="-26.135276883240977" />
+    </edge>
+    <edge source="model.local.sanclemente.ad.exame.RequisitosSistema" target="model.local.sanclemente.ad.exame.Juego" relationship="TO_ONE">
+      <point x="88.50019692036881" y="3.897834257031718E-4" />
+      <point x="-613.0" y="1021.1356666666667" />
+      <point x="-613.0" y="1021.6666666666665" />
+      <point x="-117.80585211017092" y="-42.38627269168592" />
+    </edge>
+    <edge source="model.local.sanclemente.ad.exame.Juego" target="model.local.sanclemente.ad.exame.Plataforma" relationship="TO_ONE">
+      <point x="4.383973639921805" y="-170.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="model.local.sanclemente.ad.exame.Juego" target="model.local.sanclemente.ad.exame.Imagen" relationship="TO_MANY">
+      <point x="120.5" y="-114.54193935835258" />
+      <point x="-64.5" y="-14.999958834057452" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="true" x="-432.9999999999999" y="990.0" />
+  <SelectedNodes>
+    <node>model.local.sanclemente.ad.exame.RequisitosSistema</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -74,7 +74,18 @@ public class Main {
         var q11 = em.createQuery("SELECT p FROM Pais p WHERE p NOT IN (SELECT DISTINCT p.pais FROM Pelicula p)", Pais.class);
         q11.getResultStream().forEach(System.out::println);
 
+
+
+        // f) Películas con un personaje interpretado por un actor de un país específico y duración > 100 minutos
+        System.out.println("\nPelículas con actores de un país específico y duración mayor a 100 min:");
+        var qf = em.createQuery(
+                "SELECT DISTINCT p FROM Pelicula p " +
+                        "JOIN p.personajes pj WHERE pj.personaje.paisNacemento = :pais");
+        qf.setParameter("pais", "México"); // Cambia el país según lo necesites
+        qf.getResultStream().forEach(System.out::println);
         em.close();
+
+        
 
     }
 }

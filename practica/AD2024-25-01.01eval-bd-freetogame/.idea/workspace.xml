@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0acaf33c-0744-4269-9b35-b8baee1f6104" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/sanclemente/ad/exame/AppJuegos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/sanclemente/ad/exame/dao/GeneroDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/sanclemente/ad/exame/json/JuegoSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/004c43ae796f12ecb7cafd2e7cfff3c72ec3340a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/02d9e9c025c6d01c7351cdf144e3eec17783ad5c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29f0e5705ffe730ceade08698fb363bcc344fc96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cf67cfddfb071d1a1743c6fdeada8e874d6f7b5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/3752f9ad7f219a54d1d92341a6d377edc4943d2c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3ad92f55ec6881db4f5c957ef07355541eafe2af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5cfb524c7993f7f9d6fbd139f86bcc650dd53294" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61344f99df25cb543be89d7ba03aadbcbff8be87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/6666c983a3267f4251753238b6754b564d1c8f24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/80671133aecddbefdf12b7aa62a5daf1122a259b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/0/d0ffa9c147c38c33671f4933f164019f0614e8a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/0/004c43ae796f12ecb7cafd2e7cfff3c72ec3340a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/2/02d9e9c025c6d01c7351cdf144e3eec17783ad5c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/9/29f0e5705ffe730ceade08698fb363bcc344fc96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/c/2cf67cfddfb071d1a1743c6fdeada8e874d6f7b5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/7/3752f9ad7f219a54d1d92341a6d377edc4943d2c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/a/3ad92f55ec6881db4f5c957ef07355541eafe2af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/c/5cfb524c7993f7f9d6fbd139f86bcc650dd53294" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/1/61344f99df25cb543be89d7ba03aadbcbff8be87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/6/6666c983a3267f4251753238b6754b564d1c8f24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/0/80671133aecddbefdf12b7aa62a5daf1122a259b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/0/d0ffa9c147c38c33671f4933f164019f0614e8a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/diagram.uml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-todo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/AppExame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/dao/DAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/dao/GameConnectionMaganer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/dao/GeneroDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/dao/JuegoDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/dao/PlataformaDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/gson/GsonManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/gson/JuegoTypeAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/model/Genero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/model/Imagen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/model/Juego.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/model/Plataforma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/exame/model/RequisitosSistema.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/JPAUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/dao/DAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/dao/GameConnectionMaganer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/dao/GeneroDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/dao/GeneroJPADAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/dao/ImagenDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/dao/ImagenJPADAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/dao/JuegoDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/dao/JuegoJPADAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/dao/PlataformaJPADAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/entities/Genero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/entities/Imagen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/entities/Juego.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/entities/Plataforma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/entities/RequisitosSistema.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/gson/GsonManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pepinho/ad/game/model/gson/JuegoTypeAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2t2aecgHdwZ4YoWxAFRtdHhHtDd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppExame.executor": "Run",
+    "Application.AppJuegoJSON.executor": "Run",
+    "Application.AppJuegos.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/loisr/Desktop/practica/AD2024-25-01.01eval-bd-freetogame",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.AppJuegoJSON">
+    <configuration name="AppExame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="local.sanclemente.ad.exame.AppExame" />
+      <module name="AD2023-24-01.02eval-bd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="local.sanclemente.ad.exame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppJuegoJSON" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="local.sanclemente.ad.exame.AppJuegoJSON" />
+      <module name="AD2023-24-01.02eval-bd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="local.sanclemente.ad.exame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppJuegos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="local.sanclemente.ad.exame.AppJuegos" />
+      <module name="AD2023-24-01.02eval-bd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="local.sanclemente.ad.exame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="AD2024-25-01.01eval-bd-freetogame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="AD2024-25-01.01eval-bd-freetogame" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AppJuegoJSON" />
+        <item itemvalue="Application.AppJuegos" />
+        <item itemvalue="Application.AppExame" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0acaf33c-0744-4269-9b35-b8baee1f6104" name="Changes" comment="" />
+      <created>1739552719526</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739552719526</updated>
+      <workItem from="1739552720615" duration="25000" />
+      <workItem from="1740237613432" duration="1033000" />
+      <workItem from="1740238656620" duration="16205000" />
+      <workItem from="1740300252904" duration="7220000" />
+      <workItem from="1740327572996" duration="2395000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

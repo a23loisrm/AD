@@ -1,40 +1,62 @@
 package com.pepinho.ad.jpa.peliculas;
 
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity
 public class Pelicula {
+    @Id
     private Long idPelicula;
+    @Column(length = 50)
     private String musica;
+    @Column(length = 125)
     private String orixinal;
+    @Column(length = 125)
     private String ingles;
+    @Column(length = 125)
     private String castelan;
-    private String xenero;
+    @Column(length = 50)
+    @Convert(converter = XeneroConverter.class)
+    private Xenero xenero;
     private Short anoInicio;
     private Short anoFin;
-    private String pais;
+    @ManyToOne
+    @JoinColumn(name = "pais")
+    private Pais pais;
     private Short duracion;
+    @Column(length = 25)
     private String outrasDuracions;
-    private String cor;
+    @Convert(converter = CorConverter.class)
+    @Column(length = 12)
+    private Cor cor;
     private String son;
     private String video;
+    @Lob
     private String texto;
+    @Lob
     private byte[] poster;
     private String revisado;
+
+    @OneToMany(mappedBy = "pelicula")
+    @Basic(fetch = jakarta.persistence.FetchType.LAZY)
+    @OrderBy("ocupacion DESC")
+    private List<PeliculaPersonaxe> personaxes;
 
     public Pelicula() {
     }
 
-    public Pelicula(Long idPelicula, String musica, String orixinal, String ingles, String castelan, String xenero, Short anoInicio, Short anoFin, String pais, Short duracion, String outrasDuracions, String cor, String son, String video, String texto, byte[] poster, String revisado) {
+    public Pelicula(Long idPelicula, String musica, String orixinal, String ingles, String castelan, String xenero, Short anoInicio, Short anoFin, Short duracion, String outrasDuracions, String son, String video, String texto, byte[] poster, String revisado) {
         this.idPelicula = idPelicula;
         this.musica = musica;
         this.orixinal = orixinal;
         this.ingles = ingles;
         this.castelan = castelan;
-        this.xenero = xenero;
+        this.xenero = Xenero.of(xenero);
         this.anoInicio = anoInicio;
         this.anoFin = anoFin;
-        this.pais = pais;
         this.duracion = duracion;
         this.outrasDuracions = outrasDuracions;
-        this.cor = cor;
         this.son = son;
         this.video = video;
         this.texto = texto;
@@ -83,11 +105,11 @@ public class Pelicula {
     }
 
     public String getXenero() {
-        return xenero;
+        return xenero.getXenero();
     }
 
     public void setXenero(String xenero) {
-        this.xenero = xenero;
+        this.xenero = Xenero.of(xenero);
     }
 
     public Short getAnoInicio() {
@@ -106,11 +128,11 @@ public class Pelicula {
         this.anoFin = anoFin;
     }
 
-    public String getPais() {
+    public Pais getPais() {
         return pais;
     }
 
-    public void setPais(String pais) {
+    public void setPais(Pais pais) {
         this.pais = pais;
     }
 
@@ -130,11 +152,11 @@ public class Pelicula {
         this.outrasDuracions = outrasDuracions;
     }
 
-    public String getCor() {
+    public Cor getCor() {
         return cor;
     }
 
-    public void setCor(String cor) {
+    public void setCor(Cor cor) {
         this.cor = cor;
     }
 
@@ -176,6 +198,18 @@ public class Pelicula {
 
     public void setRevisado(String revisado) {
         this.revisado = revisado;
+    }
+
+    public void setXenero(Xenero xenero) {
+        this.xenero = xenero;
+    }
+
+    public List<PeliculaPersonaxe> getPersonaxes() {
+        return personaxes;
+    }
+
+    public void setPersonaxes(List<PeliculaPersonaxe> personaxes) {
+        this.personaxes = personaxes;
     }
 
     @Override

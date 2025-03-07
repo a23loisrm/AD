@@ -1,9 +1,14 @@
 package com.pepinho.ad.jpa.peliculas;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
+import java.util.List;
 
+
+@Entity
 public class Personaxe {
-
+    @Id
     private Long idPersonaxe;
     private String importancia;
     private String nome;
@@ -18,9 +23,15 @@ public class Personaxe {
     private String cidadeDefuncion;
     private String estudio;
     private String bio;
+    @Lob
     private String texto;
+    @Lob
     private String textoFilmografia;
     private String revisado;
+
+    @OneToMany(mappedBy = "personaxe")
+    @Basic(fetch = FetchType.LAZY)
+    private List<PeliculaPersonaxe> peliculas;
 
     public Personaxe() {
     }
@@ -179,6 +190,14 @@ public class Personaxe {
 
     public void setRevisado(String revisado) {
         this.revisado = revisado;
+    }
+
+    public List<PeliculaPersonaxe> getPeliculas() {
+        return peliculas;
+    }
+
+    public void setPeliculas(List<PeliculaPersonaxe> peliculas) {
+        this.peliculas = peliculas;
     }
 
     @Override

@@ -1,9 +1,26 @@
 package com.pepinho.ad.jpa.peliculas;
 
+import jakarta.persistence.*;
+
+@Entity
 public class PeliculaPersonaxe {
 
+    @EmbeddedId
+    private IdPeliculaPersonaxe idPeliculaPersonaxe;
+
+    @ManyToOne
+    @MapsId("idPelicula")
+    @JoinColumn(name = "idPelicula")
     private Pelicula pelicula;
+
+    @ManyToOne
+    @MapsId("idPersonaxe")
+    @JoinColumn(name = "idPersonaxe")
     private Personaxe personaxe;
+
+    @ManyToOne
+    @MapsId("ocupacion")
+    @JoinColumn(name = "ocupacion")
     private Ocupacion ocupacion;
 
     private String personaxeInterpretado;
@@ -22,11 +39,9 @@ public class PeliculaPersonaxe {
         return pelicula;
     }
 
-
     public void setPelicula(Pelicula pelicula) {
         this.pelicula = pelicula;
     }
-
 
     public Personaxe getPersonaxe() {
         return personaxe;
